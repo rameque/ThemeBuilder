@@ -1,0 +1,24 @@
+{
+  "name": "Theme-Builder",
+  "version": "0.0.1",
+  "authors": [
+    "alexman <alex.rojas@bizagi.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.1.1",
+    "google-map": "Polymer/google-map#~1.0.5",
+    "paper-card": "PolymerElements/paper-card#~1.0.3",
+    "paper-material": "PolymerElements/paper-material#~1.0.1",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.3",
+    "paper-styles": "PolymerElements/paper-styles#~1.0.11",
+    "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.4"
+  }
+}

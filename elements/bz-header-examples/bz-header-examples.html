@@ -1,0 +1,46 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<dom-module id="bz-header-examples">
+    <template>
+        <style>
+            :host {
+                display: block;
+                padding: 16px;
+                color: #fff;
+                font-weight: bold;
+            }
+            :host(.red){
+                background: #df6f6d;
+            }
+            :host(.green){
+                background: #93df6d;
+            }
+            :host(.blue){
+                background: #6db3df;
+            }
+            :host(.violet){
+                background: #c66dde;
+            }
+        </style>
+        <div>
+            <span>{{title}}</span>
+        </div>
+    </template>
+    <script>
+        (function() {
+            'use strict';
+
+            Polymer({
+                is: 'bz-header-examples',
+
+                properties: {
+                    title: {
+                        type: String,
+                        value: 'bz-header-examples',
+                        notify: true
+                    }
+                }
+            });
+        })();
+    </script>
+</dom-module>
