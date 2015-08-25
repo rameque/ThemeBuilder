@@ -3,3 +3,13 @@ body{
     color:#333;
     background: #fafafa;
 }
+
+.bz-text-center {
+    text-align: center;
+}
+
+.bz-content-examples {
+    display:block;
+    border:1px solid #e1e1e1;
+    padding: 0.5em;
+}

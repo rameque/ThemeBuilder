@@ -1,0 +1,28 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<dom-module id="bz-list-selects">
+
+        <template>
+            <template is="dom-repeat" items="{{themes}}" as="algo">
+                <bz-select-colors data="{{algo}}"></bz-select-colors>
+            </template>
+        </template>
+
+        <script>
+            Polymer({
+                is: 'bz-list-selects',
+                properties: {
+                    themes:{
+                        type:Array,
+                        notify:true,
+                        value: []
+                    }
+                },created: function() {
+                    console.info('Polymer : This element was created in: ',new Date().getMilliseconds().toString(), 'ms');
+                }
+            });
+        </script>
+
+</dom-module>
+
+

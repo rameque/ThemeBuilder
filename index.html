@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="themeBuilder">
 <head>
     <meta charset="UTF-8">
     <title>Theme Builder - Polymer</title>
@@ -9,24 +9,46 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 </head>
-<body  class="fullbleed layout horizontal">
-    <section class="flex horizontal layout">
+<body  class="fullbleed layout vertical">
+    <div ng-controller="ThemeBuilderController">
+        <h1 class="vertical bz-text-center">ThemeBuilder - Polymer and AngularJS</h1>
+        <div class="flex horizontal layout">
+            <section class="flex horizontal layout">
 
-        <paper-material class="layout vertical" elevation="1">
-           <bz-header-examples title="" class="blue"></bz-header-examples>
-           <bz-body-examples>
+                <paper-material class="layout vertical" elevation="1">
+                    <bz-header-examples title="Polymer" class="blue"></bz-header-examples>
+                    <div class="bz-content-examples">
+                        <h2>With Polymer List</h2>
+                        <bz-list-selects themes="{{data}}"></bz-list-selects>
+                    </div>
+                </paper-material>
 
-           </bz-body-examples>
-        </paper-material>
+            </section>
+            <section class="flex horizontal layout">
+
+                <paper-material class="layout vertical" elevation="1">
+                    <bz-header-examples title="Actual" class="red"></bz-header-examples>
+                    <div class="bz-content-examples">
+
+                        <h2>With ng-repeat</h2>
+                        <bz-select-colors ng-repeat="dat in data" data="{{dat}}" my-repeat-directive>
+                            <div class="">{{dat.title}}</div>
+                        </bz-select-colors>
+
+                    </div>
+                </paper-material>
+
+            </section>
+        </div>
+    </div>
 
 
-    </section>
-    <section class="flex horizontal layout">
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular/angular-animate.min.js"></script>
+    <script src="js/angular/angular-route.min.js"></script>
+    <script src="js/angular/angular-sanitize.min.js"></script>
 
-        <paper-material class="layout vertical" elevation="1">
-            <bz-header-examples title="Sin Polymer" class="red"></bz-header-examples>
-        </paper-material>
+    <script src="js/themeBuilder/themeBuilderApplication.js"></script>
 
-    </section>
 </body>
 </html>

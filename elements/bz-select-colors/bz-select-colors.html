@@ -1,0 +1,96 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<dom-module id="bz-select-colors">
+    <template>
+        <style>
+            :host {
+                display: block;
+
+                --first-thumb-background-color: yellow;
+                --second-thumb-background-color: blue;
+                --third-thumb-background-color: red;
+            }
+
+           .bz-select-colors-color-tag {
+                width: 15px;
+                height: 15px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                margin: 3px;
+               border:solid 1px gray;
+            }
+
+            .bz-first-thumb {
+                background-color: var(--first-thumb-background-color);
+            }
+
+            .bz-second-thumb {
+                background-color: var(--second-thumb-background-color);
+            }
+
+            .bz-third-thumb {
+                background-color: var(--third-thumb-background-color);
+            }
+
+
+        </style>
+
+        <div class="layout horizontal">
+
+            <div class="layout horizontal">
+                <first-thumb class="bz-select-colors-color-tag bz-first-thumb"></first-thumb>
+                <second-thumb class="bz-select-colors-color-tag bz-second-thumb"></second-thumb>
+                <third-thumb class="bz-select-colors-color-tag bz-third-thumb"></third-thumb>
+            </div>
+            <div class="layout flex horizontal one">
+                <span _style="color:">[[data.title]]</span>
+            </div>
+            <div class="layout horizontal">
+                O
+            </div>
+        </div>
+        <span>{{evalData(data)}}</span>
+
+    </template>
+    <script>
+
+            Polymer({
+                is: 'bz-select-colors',
+                properties: {
+                    data:{
+                        type: Object,
+                        value: [],
+                        notify: true
+                    },
+                    title: {
+                        type: String,
+                        value: 'bz-select-colors',
+                        notify: true
+                    },
+                    timeStamp:{
+                        type: Date,
+                        value: new Date().getMilliseconds(),
+                        notify: true
+                    }
+                },
+                created:function(){
+                    console.log(this);
+
+                },
+                evalData:function(data){
+                    console.log(data);
+                },
+                _assignColors:function(first,second,third){
+                    this.customStyle['--first-thumb-background-color'] = first;
+                    this.customStyle['--second-thumb-background-color'] = second;
+                    this.customStyle['--third-thumb-background-color'] = third;
+                    this.updateStyles();
+                    console.log(first,second,third);
+                }
+
+            });
+
+
+    </script>
+</dom-module>
